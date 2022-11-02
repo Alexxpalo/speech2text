@@ -12,8 +12,8 @@ const App = () => {
   const [score, setScore] = useState(0);
 
   function getWord() {
-    setBox(currentWord.length);
-    console.log(currentWord);
+    setBox("Characters: " + currentWord.length);
+    console.log(currentWord.split(""));
   }
    
   const handleGuess = event => {
@@ -36,9 +36,9 @@ const App = () => {
   }
 
   return (
-    <div className="App">
+      <div>
+      <h1 id="title">Speech2Text</h1>
       <div id="content">
-
         <div id="word" onClick={() => {getWord(); window.speechSynthesis.speak(msg);}}>
           <p> {box} </p>
         </div>
@@ -50,8 +50,7 @@ const App = () => {
         <div id="send" onClick={handleClick}><p>Check!</p></div>
 
         <div id="score"><p>{score}</p></div>
-      </div>
-    </div>
+      </div></div>
   );
 }
 
